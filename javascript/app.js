@@ -47,8 +47,10 @@ $('#submitButton').on('click', function (){
     
     
 })
-$(document).on('click','button', ()=>{
-    alert('hey');
+$(document).on('click','button', function(){
+    let data = $(this).attr('value');
+    console.log(data);
+    
 })
 loadGif.map( elem =>{
     createButton(elem);  

@@ -1,5 +1,5 @@
 window.onload = function(){
-let loadGif = ['dolphin', 'monkey', 'lizard', 'elephant', 'crab', 'frog', 'turtle', 'dog', 'mouse', 'horse' ];
+let loadGif = ['Jay-Z', 'Beyonce', 'Smino', 'Chance The Rapper', 'Freddie Gibbs', 'Asap Rocky', 'Rhianna', 'Sza', 'Childish Gambino', 'Kanye West' ];
 const buttonArea= $('.buttonArea');
 const textArea = $('#textArea');
 const searchArea = $('.searchArea');
@@ -8,13 +8,13 @@ const gifArea= $('.gifArea');
 //creates the buttons 
 function createButton (search){
     const newButton = $('<button>')
-    newButton.attr('value', search).text(search);
+    newButton.attr('value', search.toLowerCase()).text(search);
     buttonArea.append(newButton);
     
 }
 // turns the data into the gifs and applys data-stata
 function giphy(data){
-    gifArea.empty();
+
     data.map(item => {
     let source= item.images.original.url;
 
@@ -27,7 +27,7 @@ function giphy(data){
     img.attr('data-state', 'animate');
     img.attr('data-animate', source);
     img.attr('data-still', item.images.original_still.url);
-    gifArea.append(rating,img);
+    gifArea.prepend(rating,img);
     })
 
 }
@@ -47,7 +47,7 @@ $.ajax({
 }
 //on click function to create button and populate gif
 $('#submitButton').on('click', function (){
-    let query = textArea.val().trim();
+    let query = textArea.val().toLowerCase().trim();
     event.preventDefault();
     createButton(query);
     getResults(query);
@@ -63,6 +63,7 @@ $(document).on('click','button', function(){
     getResults(data);
     
 })
+//pauses the gif
 $(document).on('click','img', function(){
     let state = $(this).attr('data-state');
     if (state === "still") {
@@ -74,6 +75,7 @@ $(document).on('click','img', function(){
       }
 
 })
+//loads the gif at the beginning of this app
 loadGif.map( elem =>{
     createButton(elem);  
 })

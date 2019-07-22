@@ -19,6 +19,7 @@ function giphy(data){
     console.log(source);
     const img = $('<img>');
     img.attr("src", source);
+    img.attr('data-state', 'animate');
     gifArea.append(img);
     })
 
@@ -49,7 +50,7 @@ $('#submitButton').on('click', function (){
 })
 $(document).on('click','button', function(){
     let data = $(this).attr('value');
-    console.log(data);
+    getResults(data);
     
 })
 loadGif.map( elem =>{

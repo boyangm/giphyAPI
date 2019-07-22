@@ -19,7 +19,7 @@ function giphy(data){
     let source= item.images.original.url;
 
     console.log(source);
-    const img = $('<img>');
+    const img = $('<img>'); 
     const rating = $('<h3>');
     rating.text('Rating: '+item.rating);
 
@@ -43,7 +43,6 @@ $.ajax({
     giphy(data);
     
 })
-
 }
 //on click function to create button and populate gif
 $('#submitButton').on('click', function (){

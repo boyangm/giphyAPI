@@ -1,5 +1,5 @@
 window.onload = function(){
-let loadGif = ['Jay-Z', 'Beyonce', 'Smino', 'Chance The Rapper', 'Freddie Gibbs', 'Asap Rocky', 'Rhianna', 'Sza', 'Childish Gambino', 'Kanye West' ];
+let loadGif = ['Jay-Z', 'Beyonce', 'Smino', 'Chance The Rapper', 'Kendrick Lamar', 'Asap Rocky', 'Rhianna', 'Sza', 'Childish Gambino', 'Kanye West' ];
 const buttonArea= $('.buttonArea');
 const textArea = $('#textArea');
 const searchArea = $('.searchArea');
@@ -19,6 +19,7 @@ function giphy(data){
     let source= item.images.original.url;
 
     console.log(source);
+    const newdiv = $('<div>');
     const img = $('<img>'); 
     const rating = $('<h3>');
     rating.text('Rating: '+item.rating);
@@ -27,7 +28,8 @@ function giphy(data){
     img.attr('data-state', 'animate');
     img.attr('data-animate', source);
     img.attr('data-still', item.images.original_still.url);
-    gifArea.prepend(rating,img);
+    newdiv.append(rating,img);
+    gifArea.prepend(newdiv);
     })
 
 }

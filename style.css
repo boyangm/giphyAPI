@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+body, .container{
+    position: relative;
+    width: 100%;
+}
+
+.buttonArea button,
+#submitButton{
+    width: 150px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 10px;
+    color: white;
+    background-color: teal;
+}
+.searchArea,
+.gifArea{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.gifArea{
+    position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   
+    max-width:100%;
+
+}
+.gifDiv{
+    position: relative;
+    flex-basis: 30%;
+    align-self: auto;
+    margin: 0 5px;
+
+}
+
+@media all and (max-width: 500px) {
+    ..gifDiv {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }

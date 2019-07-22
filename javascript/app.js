@@ -13,8 +13,9 @@ function createButton (search){
     
 }
 function giphy(data){
+    gifArea.empty();
     data.map(item => {
-    let source= item.embed_url;
+    let source= item.images.original.url;
     console.log(source);
     const img = $('<img>');
     img.attr("src", source);

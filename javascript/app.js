@@ -47,6 +47,9 @@ $('#submitButton').on('click', function (){
     
     
 })
+$(document).on('click','button', ()=>{
+    alert('hey');
+})
 loadGif.map( elem =>{
     createButton(elem);  
 })

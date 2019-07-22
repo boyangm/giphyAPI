@@ -17,13 +17,17 @@ function giphy(data){
     gifArea.empty();
     data.map(item => {
     let source= item.images.original.url;
+
     console.log(source);
     const img = $('<img>');
+    const rating = $('<h3>');
+    rating.text('Rating: '+item.rating);
+
     img.attr("src", source);
     img.attr('data-state', 'animate');
     img.attr('data-animate', source);
     img.attr('data-still', item.images.original_still.url);
-    gifArea.append(img);
+    gifArea.append(rating,img);
     })
 
 }

@@ -1,6 +1,11 @@
 *{
     box-sizing: border-box;
 }
+
+body, html{
+    margin:0;
+}
+
 body, .container{
     position: relative;
     width: 100%;
@@ -23,24 +28,27 @@ body, .container{
 }
 .gifArea{
     position: relative;
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: row;
-   
-    max-width:100%;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    max-width:1000px;
 }
 .gifDiv{
     position: relative;
-    flex-basis: 30%;
     align-self: auto;
-    margin: 0 5px;
-
+    padding:10px;
+    width:30%;
 }
 
-@media all and (max-width: 500px) {
-    ..gifDiv {
+
+.gifDiv img{
+    width: 100%;
+}
+
+@media all and (max-width: 768px) {
+    .gifDiv {
       /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
+        width:50%;
     }
   }

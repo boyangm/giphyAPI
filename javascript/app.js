@@ -1,5 +1,5 @@
 window.onload = function(){
-let loadGif = ['Jay-Z', 'Beyonce', 'Smino', 'Chance The Rapper', 'Kendrick Lamar', 'Asap Rocky', 'Rhianna', 'Sza', 'Childish Gambino', 'Kanye West' ];
+let loadGif = ['Jay-Z', 'Beyonce', 'Smino', 'Chance The Rapper', 'Kendrick Lamar', 'Asap Rocky', 'Rhianna', 'Puff Daddy', 'Childish Gambino', 'Kanye West' ];
 const buttonArea= $('.buttonArea');
 const textArea = $('#textArea');
 const searchArea = $('.searchArea');
@@ -20,6 +20,7 @@ function giphy(data){
 
     console.log(source);
     const newdiv = $('<div>');
+    newdiv.addClass('gifDiv');
     const img = $('<img>'); 
     const rating = $('<h3>');
     rating.text('Rating: '+item.rating);
